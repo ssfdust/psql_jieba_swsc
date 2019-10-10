@@ -50,7 +50,7 @@ RUN cd /pg_jieba \
   && USE_PGXS=1 make install \
   && echo "  \n\
   # echo \"timezone = 'Asia/Shanghai'\" >> /var/lib/postgresql/data/postgresql.conf \n\
-  echo \"shared_preload_libraries = 'pg_jieba.so'\" >> /var/lib/postgresql/data/postgresql.conf" \
+  echo \"shared_preload_libraries = 'pg_jieba'\" >> /var/lib/postgresql/data/postgresql.conf" \
   > /docker-entrypoint-initdb.d/init-dict.sh \
 # The following command is not required if load database from backup
   && echo "CREATE EXTENSION pg_jieba;create extension pg_scws;" > /docker-entrypoint-initdb.d/init-jieba.sql \
