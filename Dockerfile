@@ -41,7 +41,7 @@ RUN git clone https://github.com/jaiminpan/pg_scws
 RUN cd /pg_jieba \
   && mkdir -p build \
   && cd build \
-  && curl -L https://raw.githubusercontent.com/Kitware/CMake/master/Modules/FindPostgreSQL.cmake > $(find /usr -name "FindPostgreSQL.cmake") \
+  && curl -L https://raw.githubusercontent.com/ssfdust/psql_jieba_swsc/master/FindPostgreSQL.cmake > $(find /usr -name "FindPostgreSQL.cmake") \
   && cmake .. \
   && make \
   && make install \
