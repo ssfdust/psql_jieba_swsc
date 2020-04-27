@@ -33,4 +33,4 @@ RUN apk add --no-cache --virtual .build \
 
 RUN echo "echo \"shared_preload_libraries = 'pg_jieba'\" >> /var/lib/postgresql/data/postgresql.conf" \
     > /docker-entrypoint-initdb.d/init-dict.sh  && \
-    echo "CREATE EXTENSION pg_jieba;create extension pg_scws;" > /docker-entrypoint-initdb.d/init-jieba.sql && \
+    echo "CREATE EXTENSION pg_jieba;create extension pg_scws;" > /docker-entrypoint-initdb.d/init-jieba.sql
