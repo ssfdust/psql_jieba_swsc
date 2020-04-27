@@ -6,6 +6,7 @@ RUN apk add --no-cache --virtual .build \
         postgresql-dev \
         gcc \
         make \
+        llvm \
         libc-dev \
         g++ \
         clang \
