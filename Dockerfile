@@ -28,10 +28,11 @@ RUN apk add --no-cache --virtual .build \
     cd /pg_scws && \
     USE_PGXS=1 make && \
     USE_PGXS=1 make install && \
-    echo "  \n\
+    apk del .build && \
+    rm -rf /pg_jieba /pg_scws
+
+RUN echo "  \n\
     # echo \"timezone = 'Asia/Shanghai'\" >> /var/lib/postgresql/data/postgresql.conf \n\
     echo \"shared_preload_libraries = 'pg_jieba'\" >> /var/lib/postgresql/data/postgresql.conf" \
     > /docker-entrypoint-initdb.d/init-dict.sh  && \
     echo "CREATE EXTENSION pg_jieba;create extension pg_scws;" > /docker-entrypoint-initdb.d/init-jieba.sql && \
-    apk del .build && \
-    rm -rf /pg_jieba /pg_scws
