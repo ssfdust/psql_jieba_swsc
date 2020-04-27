@@ -8,6 +8,7 @@ RUN apk add --no-cache --virtual .build \
         make \
         libc-dev \
         g++ \
+        clang \
         git \
         cmake \
         curl \
